@@ -7,7 +7,7 @@ export default class ConnectionsController {
 
     const count = await db('connections').count('id')
 
-    return response.json(count)
+    return response.json(count[0])
   }
 
   async create(request: Request, response: Response) {

@@ -7,7 +7,8 @@ import logoImg from '../../assets/images/logo.svg'
 import backImg from '../../assets/images/icons/back.svg'
 
 interface PageHeaderProps {
-	title: String
+	title: String,
+	description ?: string
 }
 
 const PageHeader: React.FC<PageHeaderProps> = (props) => {
@@ -22,6 +23,9 @@ const PageHeader: React.FC<PageHeaderProps> = (props) => {
 
 			<div className="header-content">
 				<strong>{props.title}</strong>
+
+				{props.description && <p>{props.description}</p>}
+
 				{props.children}
 			</div>
 		</header>
