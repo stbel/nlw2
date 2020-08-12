@@ -98,13 +98,13 @@ export default class ClassesController {
       await trx('class_schedule').insert(classSchedule)
 
       await trx.commit()
-      return response.status(201).json({ message: 'Criado com sucesso' })
+      return response.status(201).json({ message: 'Successfuly created' })
 
     } catch (error) {
       // console.log(error)
 
       await trx.rollback()
-      return response.status(400).json({ error: 'Falha ao inserir os registros' })
+      return response.status(400).json({ error: 'Failed to create the data on server' })
     }
   }
 }
