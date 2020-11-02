@@ -117,9 +117,9 @@ export default function TeacherForm() {
           <fieldset>
             <legend>
               Horários disponíveis
-            <button type="button" onClick={addScheduleItem}>
+              <button type="button" onClick={addScheduleItem}>
                 + Novo horário
-            </button>
+              </button>
             </legend>
 
             {scheduleItems.map((scheduleItem, position) => {

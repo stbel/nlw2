@@ -24,25 +24,6 @@ export default class ClassesController {
 
     const timeInMinutes = convertStringHourToMinutes(time)
 
-    // Implementação de acordo com a aula, para Sqlite. Não testei a execução pois fiz no Postgresql.
-
-    // const classes = await db('classes')
-    //   .whereExists(function(){
-    //     this.select('class_schedule.*')
-    //       .from('class_schedule')
-    //       .whereRaw('´class_schedule´.´class_id´ = ´classes´.´id´')
-    //       .whereRaw('´class_schedule´.´week_day´ = ??', [Number(week_day)])
-    //       .whereRaw('´class_schedule´.´from´ <= ??', [Number(timeInMinutes)])
-    //       .whereRaw('´class_schedule´.´to´ > ??', [Number(timeInMinutes)])
-    //   })
-    //   .where('subject', '=', subject)
-    //   .join('users', 'classes.user_id', '=', 'users.id')
-    //   .select(['classes.*', 'users.*'])
-
-
-    // Anotação de diferença em relação à aula:
-    // As crases geraram erro no Postgresql. Pode ser um requisito do Sqlite.
-    // Não foi necessário também passar os parâmetros dentro de array.
     const classes = await db('classes')
       .whereExists(function(){
         this.select('class_schedule.*')
